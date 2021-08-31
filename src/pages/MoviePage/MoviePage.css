@@ -1,0 +1,122 @@
+.container__movieInfo__image {
+  position: relative;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 1;
+  background-size: cover;
+  background-color: #727991;
+}
+
+.container__movieInfo__image-content {
+  max-width: var(--website-container-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px 50px 30px 30px;
+}
+
+.container__movieInfo__rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 5px;
+  gap: 20px;
+}
+
+.container__movieInfo__rating h2 {
+  color: white;
+}
+
+.container__movieInfo__image h1 {
+  position: absolute;
+  bottom: 60px;
+  font-size: 30px;
+  font-weight: normal;
+  font-family: 'Airbnb Cereal App Extra Bold';
+  color: white;
+}
+
+.movieInfo__rating-icon {
+  color: white;
+}
+
+.header {
+  height: 50px;
+}
+
+.container__movieInfo__controls {
+  display: flex;
+  gap: 10px;
+}
+
+.button__movieInfo__controls {
+  border: solid 1px grey;
+  border-radius: 60px;
+  background-color: rgb(230, 227, 227);
+  color: grey;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 30px 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.button__movieInfo__controls:hover,
+.button__movieInfo__controls-selected {
+  background-color: rgb(51, 51, 51);
+  color: white;
+}
+
+.button__movieInfo__back {
+  color: white;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.btn__movieInfo__book {
+  position: relative;
+  bottom: -315px;
+  left: 53%;
+  width: 53%;
+  max-width: 300px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    rgb(223, 68, 112) 0%,
+    rgb(231, 71, 116) 51%,
+    rgb(255, 126, 163) 100%
+  );
+}
+.btn-grad {
+  margin: 10px;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}

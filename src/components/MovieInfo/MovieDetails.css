@@ -1,0 +1,43 @@
+.container__movieInfo__details-top-left {
+  width: 25%;
+}
+
+.container__movieInfo__details-top {
+  display: flex;
+  gap: 25px;
+}
+
+.container__movieInfo__details-bottom {
+  display: flex;
+}
+
+.container__movieInfo__details-item {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.movieInfo__details-item__text {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-bottom: 20px;
+}
+
+.movieInfo__details-item__genre {
+  border: 1px solid var(--light-paragraph-content);
+  border-radius: 20px;
+  padding: 5px 15px 5px 15px;
+}
+
+.movieInfo__details-item__genre p {
+  color: var(--paragraph-content);
+  font-size: var(--paragraph-fontsize);
+}
+
+.movieInfo__details-item__lang {
+  display: flex;
+}
+
+.container__movieInfo__details h3 {
+  margin-bottom: 10px;
+  padding: 0;
+}

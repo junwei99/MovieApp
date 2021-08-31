@@ -1,0 +1,45 @@
+.card__movie {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.container__card__poster,
+.image__card__poster {
+  background-color: #727991;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.container__card__poster {
+  min-width: 100px;
+  height: 150px;
+  width: 100px;
+}
+
+.container__card__info {
+  padding: 10px;
+  width: auto;
+}
+
+.container__card__info-line {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+p span,
+h3 span {
+  font-family: 'Airbnb Cereal App Medium';
+  font-weight: normal;
+  font-size: 15px;
+  margin: 0;
+}

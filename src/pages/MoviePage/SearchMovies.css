@@ -1,0 +1,4 @@
+.container__search__movies__title {
+  display: flex;
+  gap: 20px;
+}

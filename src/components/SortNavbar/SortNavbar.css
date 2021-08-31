@@ -1,0 +1,19 @@
+.container__sort-navbar {
+  display: flex;
+  max-width: 400px;
+}
+
+.button__sort-navbar {
+  border: 1px solid var(--light-paragraph-content);
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: auto;
+  font-weight: 600;
+}
+
+.button__sort-navbar-active {
+  background-color: rgb(223, 68, 112);
+  color: rgb(255, 255, 255);
+  border: none;
+}
