@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import MovieCard from './MovieCard/MovieCard';
 
 interface MovieCardsProps {
@@ -12,18 +12,19 @@ const MovieCards: React.FC<MovieCardsProps> = ({
   error,
   loading,
 }) => {
-  const [movies, setMovies] = useState<any | null>(null);
+  // const [movies, setMovies] = useState<any | null>(null);
 
-  useEffect(() => {
-    const fetchMoviesList = () => {
-      if (moviesData !== null) {
-        setMovies(moviesData);
-      }
-    };
-    fetchMoviesList();
-
-    return () => {};
-  }, [moviesData]);
+  // useEffect(() => {
+  //   const fetchMoviesList = () => {
+  //     if (moviesData !== null) {
+  //       setMovies(moviesData);
+  //     }
+  //   };
+  //   fetchMoviesList();
+  //   return () => {
+  //     setMovies([]);
+  //   };
+  // }, [moviesData]);
 
   const getImage = (posterPath: string): boolean => {
     let posterExist: boolean = true;
@@ -40,8 +41,8 @@ const MovieCards: React.FC<MovieCardsProps> = ({
   return (
     <>
       <div className="container__movies">
-        {movies != null && movies.length > 0 ? (
-          movies.map((movie: any) => (
+        {moviesData != null && moviesData.length > 0 ? (
+          moviesData.map((movie: any) => (
             <MovieCard
               key={movie.id}
               id={movie.id}

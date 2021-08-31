@@ -36,7 +36,6 @@ const useSearchMovies = (query: string, pageNumber: number) => {
       });
     return () => cancel();
   }, [query, pageNumber]);
-
   return { loading, error, movies, hasMore };
 };
 

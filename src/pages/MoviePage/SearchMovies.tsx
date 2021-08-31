@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { RouteComponentProps } from '@reach/router';
 import useSearchMovies from '../../hooks/useSearchMovies';
-import { MovieCards } from '../../components';
+import { MovieCard } from '../../components';
 import { useNavigate } from '@reach/router';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import './SearchMovies.css';
@@ -36,6 +36,18 @@ const SearchMovies: React.FC<SearchMoviesProps> = () => {
     setQuery(e.target.value);
     setPageNumber(1);
   }
+
+  const getImage = (posterPath: string): boolean => {
+    let posterExist: boolean = true;
+
+    if ((posterPath = '')) {
+      posterExist = false;
+    } else {
+      posterExist = true;
+    }
+
+    return posterExist;
+  };
 
   return (
     <>
@@ -83,24 +95,39 @@ const SearchMovies: React.FC<SearchMoviesProps> = () => {
           {movies.map((movie: any, index: number) => {
             if (movies.length === index + 1) {
               return (
-                // <div ref={lastMovieElementRef} key={movie.id}>
-                //   {movie.title}
-                // </div>
                 <div ref={lastMovieElementRef}>
-                  <MovieCards
-                    moviesData={movies}
-                    error={null}
-                    loading={loading}
+                  <MovieCard
+                    key={movie.id}
+                    id={movie.id}
+                    title={movie.title}
+                    popularity={movie.popularity}
+                    rating={movie.vote_average}
+                    image={
+                      getImage(movie.poster_path)
+                        ? 'https://image.tmdb.org/t/p/original' +
+                          movie.poster_path
+                        : 'https://image.tmdb.org/t/p/original' +
+                          movie.backdrop_path
+                    }
                   />
                 </div>
               );
             }
             return (
               <div>
-                <MovieCards
-                  moviesData={movies}
-                  error={null}
-                  loading={loading}
+                <MovieCard
+                  key={movie.id}
+                  id={movie.id}
+                  title={movie.title}
+                  popularity={movie.popularity}
+                  rating={movie.vote_average}
+                  image={
+                    getImage(movie.poster_path)
+                      ? 'https://image.tmdb.org/t/p/original' +
+                        movie.poster_path
+                      : 'https://image.tmdb.org/t/p/original' +
+                        movie.backdrop_path
+                  }
                 />
               </div>
             );
