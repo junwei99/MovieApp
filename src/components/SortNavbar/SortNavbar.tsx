@@ -26,8 +26,6 @@ const SortNavbar = (props: Props) => {
       {btnData.map((btn) => {
         const className =
           location.pathname === btn.value ? 'button__sort-navbar-active' : '';
-        console.log('pathname ' + location.pathname);
-        console.log('btn.value ' + btn.value);
         return (
           <button
             className={`button__sort-navbar ${className}`}

@@ -52,7 +52,7 @@ const MoviePage: React.FC<MovieProps> = ({ movieId }) => {
               </div>
               <a
                 className="btn__movieInfo__book btn-grad"
-                href="https://www.cathaycineplexes.com.sg/"
+                href="https://www.imdb.com/"
                 target="_blank"
                 rel="noreferrer"
               >

@@ -29,21 +29,6 @@ const MovieCard: React.FC<Props> = ({
 
   return (
     <>
-      {/* <div
-        className="card__movie"
-        style={{
-          backgroundImage: `linear-gradient(
-          to bottom,
-          rgba(245, 246, 252, 0.1),
-          rgba(43, 7, 34, 0.85) 60%
-        ),
-        
-        url(${image} )`,
-        }}
-      >
-        <h2>{title}</h2>
-        <p>Popularity : {popularity}</p>
-      </div> */}
       <div
         className="card__movie"
         onClick={() => {

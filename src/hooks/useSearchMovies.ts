@@ -7,12 +7,17 @@ const useSearchMovies = (query: string, pageNumber: number) => {
   const [error, setError] = useState(false);
   const [movies, setMovies] = useState<any>([]);
   const [hasMore, setHasMore] = useState(false);
+  const [firstLoad, setFirstLoad] = useState(true);
 
   useEffect(() => {
     setMovies([]);
   }, [query]);
 
   useEffect(() => {
+    if (query === '' || query === null) {
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     setError(false);
     let cancel: any;
@@ -23,7 +28,6 @@ const useSearchMovies = (query: string, pageNumber: number) => {
       cancelToken: new axios.CancelToken((c) => (cancel = c)),
     })
       .then((res) => {
-        console.log(res);
         setMovies((prevMovies: any) => {
           return Array.from(new Set([...prevMovies, ...res.data.results]));
         });
@@ -35,7 +39,7 @@ const useSearchMovies = (query: string, pageNumber: number) => {
         setError(true);
       });
     return () => cancel();
-  }, [query, pageNumber]);
+  }, [query, pageNumber, firstLoad]);
   return { loading, error, movies, hasMore };
 };
 

@@ -92,10 +92,30 @@ const SearchMovies: React.FC<SearchMoviesProps> = () => {
           />
         </div>
         <div className="container__movies__search">
-          {movies.map((movie: any, index: number) => {
-            if (movies.length === index + 1) {
+          {movies.length > 0 &&
+            movies.map((movie: any, index: number) => {
+              if (movies.length === index + 1) {
+                return (
+                  <div ref={lastMovieElementRef}>
+                    <MovieCard
+                      key={movie.id}
+                      id={movie.id}
+                      title={movie.title}
+                      popularity={movie.popularity}
+                      rating={movie.vote_average}
+                      image={
+                        getImage(movie.poster_path)
+                          ? 'https://image.tmdb.org/t/p/original' +
+                            movie.poster_path
+                          : 'https://image.tmdb.org/t/p/original' +
+                            movie.backdrop_path
+                      }
+                    />
+                  </div>
+                );
+              }
               return (
-                <div ref={lastMovieElementRef}>
+                <div>
                   <MovieCard
                     key={movie.id}
                     id={movie.id}
@@ -112,30 +132,15 @@ const SearchMovies: React.FC<SearchMoviesProps> = () => {
                   />
                 </div>
               );
-            }
-            return (
-              <div>
-                <MovieCard
-                  key={movie.id}
-                  id={movie.id}
-                  title={movie.title}
-                  popularity={movie.popularity}
-                  rating={movie.vote_average}
-                  image={
-                    getImage(movie.poster_path)
-                      ? 'https://image.tmdb.org/t/p/original' +
-                        movie.poster_path
-                      : 'https://image.tmdb.org/t/p/original' +
-                        movie.backdrop_path
-                  }
-                />
-              </div>
-            );
-          })}
+            })}
+          {movies.length === 0 && loading !== true && (
+            <div className="container__msg">No Movies found</div>
+          )}
         </div>
 
-        <div>{loading && 'loading'}</div>
-        <div>{error && 'Error...'}</div>
+        <div className="container__msg">{loading && 'LOADING ... '}</div>
+
+        <div className="container__msg">{error && 'Error...'}</div>
         <br />
       </div>
     </>
