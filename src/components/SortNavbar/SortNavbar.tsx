@@ -5,15 +5,19 @@ interface Props {}
 
 const btnData = [
   {
-    name: 'Latest',
+    name: 'Popular',
     value: '/',
   },
   {
-    name: 'Alphabetical',
-    value: '/alphabetical',
+    name: 'Upcoming',
+    value: '/upcoming',
   },
   {
-    name: 'Rating',
+    name: 'Now Playing',
+    value: '/nowplaying',
+  },
+  {
+    name: 'Top Rated',
     value: '/rating',
   },
 ];

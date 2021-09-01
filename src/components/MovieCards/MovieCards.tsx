@@ -12,20 +12,6 @@ const MovieCards: React.FC<MovieCardsProps> = ({
   error,
   loading,
 }) => {
-  // const [movies, setMovies] = useState<any | null>(null);
-
-  // useEffect(() => {
-  //   const fetchMoviesList = () => {
-  //     if (moviesData !== null) {
-  //       setMovies(moviesData);
-  //     }
-  //   };
-  //   fetchMoviesList();
-  //   return () => {
-  //     setMovies([]);
-  //   };
-  // }, [moviesData]);
-
   const getImage = (posterPath: string): boolean => {
     let posterExist: boolean = true;
 

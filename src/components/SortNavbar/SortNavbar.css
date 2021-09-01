@@ -1,6 +1,13 @@
 .container__sort-navbar {
   display: flex;
-  max-width: 400px;
+  max-width: 500px;
+  overflow: auto;
+  white-space: nowrap;
+  gap: 0 10px;
+}
+
+.container__sort-navbar::-webkit-scrollbar {
+  display: none;
 }
 
 .button__sort-navbar {
