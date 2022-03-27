@@ -5,7 +5,7 @@ import { Router } from "@reach/router";
 import "./assets/fonts/style.css";
 import HomepageLayout from "./pages/MoviePage/layouts/HomepageLayout";
 
-const apiKey = "328c283cd27bd1877d9080ccb1604c91";
+const apiKey = process.env.REACT_APP_MOVIE_API;
 
 const recentMoviesURL: string = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&sort_by=primary_release_date.desc&primary_release_date.lte=2021-12-31
 `;
