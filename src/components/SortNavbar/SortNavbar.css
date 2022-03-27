@@ -1,9 +1,16 @@
 .container__sort-navbar {
   display: flex;
-  max-width: 500px;
+  max-width: 530px;
   overflow: auto;
   white-space: nowrap;
   gap: 0 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.desktop-navbar {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .container__sort-navbar::-webkit-scrollbar {

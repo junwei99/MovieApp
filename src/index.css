@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   -moz-box-sizing: border-box;
@@ -17,13 +17,13 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Airbnb Cereal App Light', sans-serif;
+  font-family: "Airbnb Cereal App Light", sans-serif;
   font-weight: normal;
 }
 
 h1 {
   margin: 0;
-  font-family: 'Airbnb Cereal App Bold';
+  font-family: "Airbnb Cereal App Bold";
   font-weight: bolder;
   font-size: 50px;
 }
@@ -33,7 +33,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Airbnb Cereal App Medium';
+  font-family: "Airbnb Cereal App Medium";
   font-weight: normal;
   font-size: 18px;
   margin: 0 0 10px 0;
@@ -55,14 +55,18 @@ p {
 }
 
 button {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container {
-  padding: 15px 30px 30px 30px;
+  padding: 0 30px;
   max-width: var(--website-container-width);
   margin-right: auto;
   margin-left: auto;
+}
+
+.container__homepage {
+  margin-top: 20px;
 }
 
 .search-bar {
@@ -96,4 +100,8 @@ button {
 
 .search-bar input {
   outline-width: 0;
+}
+
+.circular-progress .MuiCircularProgress-svg {
+  color: #df4470;
 }

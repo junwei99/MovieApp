@@ -1,11 +1,12 @@
-import { RouteComponentProps } from '@reach/router';
-import { useNavigate } from '@reach/router';
-import { useEffect, useState } from 'react';
-import { getMovieInfo } from './moviepage.api';
-import { MovieDetails } from '../../components';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import StarIcon from '@material-ui/icons/Star';
-import './MoviePage.css';
+import { RouteComponentProps } from "@reach/router";
+import { useNavigate } from "@reach/router";
+import { useEffect, useState } from "react";
+import { getMovieInfo } from "./moviepage.api";
+import { MovieDetails } from "../../components";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import StarIcon from "@material-ui/icons/Star";
+import "./MoviePage.css";
+import { CircularProgress } from "@material-ui/core";
 
 interface MovieProps extends RouteComponentProps {
   movieId?: string;
@@ -14,11 +15,14 @@ interface MovieProps extends RouteComponentProps {
 const MoviePage: React.FC<MovieProps> = ({ movieId }) => {
   const [movie, setMovie] = useState<any | null>(null);
   const navigate = useNavigate();
+  const [movieIsLoading, setMovieIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchMovieInfo = async () => {
+      setMovieIsLoading(true);
       const movieInfo = await getMovieInfo(movieId);
       setMovie(movieInfo);
+      setMovieIsLoading(false);
     };
     fetchMovieInfo();
     return () => {};
@@ -26,7 +30,7 @@ const MoviePage: React.FC<MovieProps> = ({ movieId }) => {
 
   return (
     <>
-      {movie != null ? (
+      {!movieIsLoading && movie != null ? (
         <>
           <div
             className="container__movieInfo__image"
@@ -39,7 +43,7 @@ const MoviePage: React.FC<MovieProps> = ({ movieId }) => {
               <button
                 className="button__movieInfo__back"
                 onClick={() => {
-                  navigate('/', { replace: true });
+                  navigate("/", { replace: true });
                 }}
               >
                 <ArrowBackIcon />
@@ -71,7 +75,9 @@ const MoviePage: React.FC<MovieProps> = ({ movieId }) => {
           </div>
         </>
       ) : (
-        <div>No Movie</div>
+        <div className="container__movie-loading">
+          <CircularProgress className="circular-progress" />
+        </div>
       )}
     </>
   );

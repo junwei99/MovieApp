@@ -33,7 +33,7 @@
   bottom: 60px;
   font-size: 30px;
   font-weight: normal;
-  font-family: 'Airbnb Cereal App Extra Bold';
+  font-family: "Airbnb Cereal App Extra Bold";
   color: white;
 }
 
@@ -119,4 +119,12 @@
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+
+.container__movie-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
 }
