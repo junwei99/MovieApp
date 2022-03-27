@@ -95,6 +95,7 @@ const SearchMovies: React.FC<SearchMoviesProps> = () => {
                           : "https://image.tmdb.org/t/p/original" +
                             movie.backdrop_path
                       }
+                      releaseDate={movie.release_date}
                     />
                   </div>
                 );
@@ -114,6 +115,7 @@ const SearchMovies: React.FC<SearchMoviesProps> = () => {
                         : "https://image.tmdb.org/t/p/original" +
                           movie.backdrop_path
                     }
+                    releaseDate={movie.release_date}
                   />
                 </div>
               );

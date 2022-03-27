@@ -34,11 +34,12 @@
   padding: 0;
   margin-bottom: 10px;
   margin-top: 10px;
+  gap: 6px;
 }
 
 p span,
 h3 span {
-  font-family: 'Airbnb Cereal App Medium';
+  font-family: "Airbnb Cereal App Medium";
   font-weight: normal;
   font-size: 15px;
   margin: 0;

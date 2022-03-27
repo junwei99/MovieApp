@@ -66,6 +66,7 @@ const Homepage: React.FC<HomeProps> = ({ url }) => {
                       : "https://image.tmdb.org/t/p/original" +
                         movie.backdrop_path
                   }
+                  releaseDate={movie.release_date}
                 />
               </div>
             );
@@ -84,6 +85,7 @@ const Homepage: React.FC<HomeProps> = ({ url }) => {
                     : "https://image.tmdb.org/t/p/original" +
                       movie.backdrop_path
                 }
+                releaseDate={movie.release_date}
               />
             </div>
           );

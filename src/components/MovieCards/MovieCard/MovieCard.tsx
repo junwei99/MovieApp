@@ -1,7 +1,7 @@
-import { useNavigate } from '@reach/router';
-import './MovieCard.css';
-import noPosterImage from '../../../assets/images/NoPosterImage.png';
-import StarIcon from '@material-ui/icons/Star';
+import { useNavigate } from "@reach/router";
+import "./MovieCard.css";
+import noPosterImage from "../../../assets/images/NoPosterImage.png";
+import StarIcon from "@material-ui/icons/Star";
 
 interface Props {
   id: number;
@@ -9,6 +9,7 @@ interface Props {
   popularity: number;
   rating: number;
   image: string;
+  releaseDate: string;
 }
 
 const MovieCard: React.FC<Props> = ({
@@ -17,14 +18,20 @@ const MovieCard: React.FC<Props> = ({
   popularity,
   rating,
   image,
+  releaseDate,
 }) => {
   const navigate = useNavigate();
   const posterImage = () => {
-    if (image === '' || image === 'https://image.tmdb.org/t/p/originalnull') {
+    if (image === "" || image === "https://image.tmdb.org/t/p/originalnull") {
       return noPosterImage;
     } else {
       return image;
     }
+  };
+
+  const getReadableDate = (dateInput: string): string => {
+    let d = new Date(dateInput);
+    return d.toDateString().slice(4);
   };
 
   return (
@@ -45,12 +52,10 @@ const MovieCard: React.FC<Props> = ({
         <div className="container__card__info">
           <h3>{title}</h3>
           <div className="container__card__info-line">
-            <StarIcon style={{ color: 'var(--paragraph-content)' }} />
-            <p>{rating}/10</p>
+            <StarIcon style={{ color: "#a8a032" }} />
+            <p>{rating}</p>
           </div>
-          <p>
-            <span>Popularity: </span> {popularity}
-          </p>
+          <p>{getReadableDate(releaseDate)}</p>
         </div>
       </div>
 

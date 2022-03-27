@@ -1,5 +1,5 @@
 // import { useEffect, useState } from 'react';
-import MovieCard from './MovieCard/MovieCard';
+import MovieCard from "./MovieCard/MovieCard";
 
 interface MovieCardsProps {
   moviesData: any;
@@ -15,7 +15,7 @@ const MovieCards: React.FC<MovieCardsProps> = ({
   const getImage = (posterPath: string): boolean => {
     let posterExist: boolean = true;
 
-    if ((posterPath = '')) {
+    if ((posterPath = "")) {
       posterExist = false;
     } else {
       posterExist = true;
@@ -37,9 +37,10 @@ const MovieCards: React.FC<MovieCardsProps> = ({
               rating={movie.vote_average}
               image={
                 getImage(movie.poster_path)
-                  ? 'https://image.tmdb.org/t/p/original' + movie.poster_path
-                  : 'https://image.tmdb.org/t/p/original' + movie.backdrop_path
+                  ? "https://image.tmdb.org/t/p/original" + movie.poster_path
+                  : "https://image.tmdb.org/t/p/original" + movie.backdrop_path
               }
+              releaseDate={movie.release_date}
             />
           ))
         ) : (
